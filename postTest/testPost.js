@@ -24,3 +24,9 @@ filterUsersByName(users, "Bass").then(r => console.log(r));
 
 // Expected: [], since there are no that have the string "Tomas" in their name.
 filterUsersByName(users, "Tomas").then(r => console.log(r));
+
+// Expected: [], since there are is no body or filter.
+filterUsersByName().then(r => console.log(r));
+
+// Expected: [], since there is no userData.
+filterUsersByName(undefined, "Bass").then(r => console.log(r));
