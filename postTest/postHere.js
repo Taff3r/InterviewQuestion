@@ -16,12 +16,12 @@ app.post("/fortlax/selectusers", (req, resp) => {
    switch(data){
       // If body is empty.
       case "no-body":
-         console.log("No");
+         //console.log("No");
          resp.json([]);
          break;
       // If body is missing user arr.
       case "bad-body":
-         console.log("Bad");
+         //console.log("Bad");
          resp.json([]);
          break;
       default:
