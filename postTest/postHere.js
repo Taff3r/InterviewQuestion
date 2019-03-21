@@ -16,24 +16,23 @@ app.post("/fortlax/selectusers", (req, resp) => {
    switch(data){
       // If body is empty.
       case "no-body":
-         //console.log("No");
+         console.log("No");
          resp.json([]);
          break;
       // If body is missing user arr.
       case "bad-body":
-         //console.log("Bad");
+         console.log("Bad");
          resp.json([]);
          break;
       default:
          if(filter){
-           data = data.filter(u => u.name.includes(filter));
+           data = data.filter(u => u.hasOwnProperty("name") && u.name.includes(filter));
          }     
          resp.json(data);
    }
 });
    
 function bodyControl(body, pName){
-   console.log(body);
    if(Object.keys(body).length === 0){
      return "no-body"; 
    }else if(!body[pName]){

@@ -30,3 +30,9 @@ filterUsersByName().then(r => console.log(r));
 
 // Expected: [], since there is no userData.
 filterUsersByName(undefined, "Bass").then(r => console.log(r));
+
+// Expected: "somestring" since there is  
+filterUsersByName("somestring").then(r => console.log(r));
+
+// Expected: [{id: -1, name: "James"}]
+filterUsersByName([{id: -1, name: "James"}, "someString", 123], "James").then(r => console.log(r));
